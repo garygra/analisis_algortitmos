@@ -37,6 +37,6 @@ int main (int argc, char *argv[])
   	{
   		printf("Option not supported\n");
   	}
-  	sa -> print_array();
+  	// sa -> print_array();
   	return 0;
 }

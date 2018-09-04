@@ -91,16 +91,7 @@ void sorting_algorithms::merge_sort()
 				f2[i_f2] = array[i];
 				i_f2++;
 			}
-		// std::cout << __LINE__ << std::endl;
 			fill_f1 = (i + 1) % step == 0? !fill_f1 : fill_f1;
-		// 	if ((i+1) % step == 0)
-		// 	{
-		// std::cout << __LINE__ << std::endl;
-		// 		fill_f1 = !fill_f1;
-		// 	}
-		// std::cout << __LINE__ << std::endl;
-
-			// std::cout << "i: " << i << "\tsize_arr " << size_arr << std::endl;
 		}
 		f1_size = i_f1;
 		f2_size = i_f2;
@@ -161,14 +152,6 @@ void sorting_algorithms::merge_sort()
 
 		n++;
 		step *= 2;
-		// f1_size = (size_arr + n ) / 2;
-		// f2_size = size_arr / 2;
-		// f1_size = ;
-		// f2_size = size_arr - f1_size;
-
-		// printf("n = %d\n", n );
-		// printf("RES:");
-		// print_array();
 
 	}
 
