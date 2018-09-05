@@ -55,7 +55,6 @@ void sorting_algorithms::insertion_sort()
 	double duration = timer.measure();
 
 	std::cout << "Time spent sorting: " << duration << std::endl;
-
 }
 
 void sorting_algorithms::merge_sort()
@@ -63,12 +62,9 @@ void sorting_algorithms::merge_sort()
 	int step = 1;
 	int n = 1;
 	int i_arr = 0;
-
 	int f1_size = 0;
 	int f2_size = 0;
-
 	int tot_iters = ceil(log2(size_arr)) ;
-
 	int f1[size_arr], f2[size_arr];
 	
 	std::cout << "Starting insertion sort..." << std::endl;
@@ -76,9 +72,7 @@ void sorting_algorithms::merge_sort()
 	while (n <= tot_iters)
 	{
 		bool fill_f1 = true;
-		int i_f1 = 0, i_f2 = 0;
-	
-	
+		int i_f1 = 0, i_f2 = 0;	
 		for (int i = 0; i < size_arr; ++i)
 		{
 			if (fill_f1)
@@ -98,11 +92,6 @@ void sorting_algorithms::merge_sort()
 		i_f1 = 0;
 		i_f2 = 0;
 		i_arr = 0;
-		// printf("F1:\n");
-		// print_array(f1, f1_size);
-		// printf("F2:\n");
-		// print_array(f2, f2_size);
-
 		int limit_temp = step;
 		while (i_f1 < f1_size && i_f2 < f2_size)
 		{
@@ -138,10 +127,8 @@ void sorting_algorithms::merge_sort()
 					array[i_arr] = f2[i_f2];
 					i_f2++;
 				}
-				
 				i_arr++;
 			}
-		
 		}
 		while (i_f1 < f1_size)
 		{
@@ -149,14 +136,10 @@ void sorting_algorithms::merge_sort()
 			i_f1++;
 			i_arr++;
 		}
-
 		n++;
 		step *= 2;
-
 	}
-
 	double duration = timer.measure();
-
 	std::cout << "Time spent sorting: " << duration << std::endl;
 }
 
