@@ -55,108 +55,63 @@ void sorting_algorithms::insertion_sort()
 	double duration = timer.measure();
 
 	std::cout << "Time spent sorting: " << duration << std::endl;
-
 }
 
 void sorting_algorithms::merge_sort()
 {	
-	int step = 1;
-	int n = 1;
-	int i_arr = 0;
-
-	int f1_size = 0;
-	int f2_size = 0;
-
+	int step = 1, n = 1, i_arr = 0, f1_size = 0, f2_size = 0;
 	int tot_iters = ceil(log2(size_arr)) ;
-
 	int f1[size_arr], f2[size_arr];
-	
 	std::cout << "Starting insertion sort..." << std::endl;
 	timer.reset();
-	while (n <= tot_iters)
-	{
+	while (n <= tot_iters) {
 		bool fill_f1 = true;
-		int i_f1 = 0, i_f2 = 0;
-	
-	
-		for (int i = 0; i < size_arr; ++i)
-		{
-			if (fill_f1)
-			{
+		int i_f1 = 0, i_f2 = 0;	
+		for (int i = 0; i < size_arr; ++i) {
+			if (fill_f1) {
 				f1[i_f1] = array[i];
 				i_f1++;
-			}
-			else 
-			{
+			} else {
 				f2[i_f2] = array[i];
 				i_f2++;
 			}
 			fill_f1 = (i + 1) % step == 0? !fill_f1 : fill_f1;
 		}
-		f1_size = i_f1;
-		f2_size = i_f2;
-		i_f1 = 0;
-		i_f2 = 0;
-		i_arr = 0;
-		// printf("F1:\n");
-		// print_array(f1, f1_size);
-		// printf("F2:\n");
-		// print_array(f2, f2_size);
-
+		f1_size = i_f1; f2_size = i_f2;
+		i_f1 = 0; i_f2 = 0; i_arr = 0;
 		int limit_temp = step;
-		while (i_f1 < f1_size && i_f2 < f2_size)
-		{
-			if (limit_temp <= i_f1)
-			{
-				while (i_f2 < limit_temp)
-				{
+		while (i_f1 < f1_size && i_f2 < f2_size){
+			if (limit_temp <= i_f1) {
+				while (i_f2 < limit_temp) {
 					array[i_arr] = f2[i_f2];
-					i_f2++;
-					i_arr++;
+					i_f2++; i_arr++;
 				}
 				limit_temp += step;
-			}
-			else if(limit_temp <= i_f2)
-			{
-				while (i_f1 < limit_temp)
-				{
+			} else if(limit_temp <= i_f2) {
+				while (i_f1 < limit_temp) {
 					array[i_arr] = f1[i_f1];
-					i_f1++;
-					i_arr++;
+					i_f1++; i_arr++;
 				}
 				limit_temp += step;
-			} 
-			else 
-			{
-				if (f1[i_f1] < f2[i_f2])
-				{
+			} else {
+				if (f1[i_f1] < f2[i_f2]) {
 					array[i_arr] = f1[i_f1];
 					i_f1++;
-				}
-				else
-				{
+				} else {
 					array[i_arr] = f2[i_f2];
 					i_f2++;
 				}
-				
 				i_arr++;
 			}
-		
 		}
-		while (i_f1 < f1_size)
-		{
+		while (i_f1 < f1_size) {
 			array[i_arr] = f1[i_f1];
-			i_f1++;
-			i_arr++;
+			i_f1++; i_arr++;
 		}
-
 		n++;
 		step *= 2;
-
 	}
-
 	double duration = timer.measure();
-
 	std::cout << "Time spent sorting: " << duration << std::endl;
 }
 
