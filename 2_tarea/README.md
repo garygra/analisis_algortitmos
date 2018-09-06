@@ -10,6 +10,7 @@ Para compilar:
 
 ## Pruebas:
 En la siguiente tabla se muestra el promedio de 10 repeticiones
+
 |  n   | Inserción (s) | Mezcla (s) |
 | ---- | ------------- | ---------- |
 | 10k  | 0.075498      | 0.0040986  | 
