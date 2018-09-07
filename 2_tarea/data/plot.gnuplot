@@ -4,22 +4,23 @@
 
 set encoding utf8
 set key left
-set terminal postscript enhanced eps color
+set terminal postscript enhanced eps monochrome
 
 set output "2tarea_plot.eps"
 set title "Algoritmos de Ordenamiento"
 set xlabel "N"
 set ylabel 'Tiempo (s)'
 set logscale x 2 
-# set xrange [1:20]
 set logscale y 2
 set xtics (1, 10000, 100000, 1000000) 
 set xtics add ("0.0" 0.1) 
-# f(x) = a*x**b;
-# fit f(x) 'results.txt' using 1:2 via a,b
+set offset 0.6,0.6,0,0
+set palette gray
 
-plot "results.txt" using 1:2 every ::1 with points lt 7 title "Inserción",\
-	'' using 1:3 every ::1 with points lt 6 title "Mezcla"
+plot "results_ave.txt" using 1:2 every ::1 with linespoints pt 7 lt 7 title "Inserción",\
+	'' using 1:3 every ::1 with linespoints lt 3 lc 3 pt 9  title "Mezcla",\
+	'' using 1:3:(sprintf("%.4f", $3)) every ::1 with labels center offset 0,1 notitle,\
+	'' using 1:2:(sprintf("%.4f", $2)) every ::1 with labels center offset 1,-1 notitle
 	# f(x) with lines
 
   # plot "data.txt" using 1:5 every ::2 with linespoints linestyle 7
