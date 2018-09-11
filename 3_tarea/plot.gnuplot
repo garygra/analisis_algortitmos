@@ -54,12 +54,18 @@ plot f1(x) with lines title "1.5^n",\
 set output "3tarea_plot_close.eps"
 plot f2(x) with lines title "n^3",\
 	 f3(x) with lines title "log_2^2(n)",\
-	 "data/f4_data.txt" using 1:2 with lines title "log2(x!)",\
-	 f6(x) with lines title "log_2 log_2 n",\
+	 "data/f4_data.txt" using 1:2 with lines title "log2(n!)",\
+	 f6(x) with lines title "ln(ln(n))",\
 	 f7(x) with lines title "n^{log_2 log_2 n}",\
 	 f8(x) with lines title "2^{log_2 n}",\
-	 "data/fa_data.txt" using 1:2 with lines title "(log2(x))!",\
+	 "data/fa_data.txt" using 1:2 with lines title "(log2(n))!",\
 	 "data/fb_data.txt" using 1:2 with lines title "log_2 log_2 n",\
 	 fd(x) with lines title "n log_2 n"
 
-
+set output "3tarea_plot_close2.eps"
+plot f3(x) with lines title "log_2^2(n)",\
+	 "data/f4_data.txt" using 1:2 with lines title "log2(n!)",\
+	 f6(x) with lines title "ln(ln(n))",\
+	 f8(x) with lines title "2^{log_2 n}",\
+	 "data/fb_data.txt" using 1:2 with lines title "log_2 log_2 n",\
+	 fd(x) with lines title "n log_2 n"
