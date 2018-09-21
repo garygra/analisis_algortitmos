@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/robotica/Gary/analisis_algortitmos/matrices/src/mochila.cpp
+iostream
+-
+eigen3/Eigen/Dense
+-
+
