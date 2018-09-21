@@ -1,3 +1,0 @@
-/home/robotica/Gary/analisis_algortitmos/matrices/build/CMakeFiles/edit_cache.dir
-/home/robotica/Gary/analisis_algortitmos/matrices/build/CMakeFiles/rebuild_cache.dir
-/home/robotica/Gary/analisis_algortitmos/matrices/build/CMakeFiles/mochila.dir
