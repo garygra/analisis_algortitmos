@@ -21,6 +21,7 @@ include_directories(
 
 # add_executable(matrices src/example.cpp)
 add_executable(mochila src/mochila.cpp)
+add_executable(simplex src/simplex.cpp)
 
 # target_link_libraries(
 # 	matrices 
