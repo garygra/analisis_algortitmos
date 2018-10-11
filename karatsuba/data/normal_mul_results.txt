@@ -1,0 +1,9 @@
+i:  1  Number1:  5  Number2:  6   Result: 30 in: 2.5e-05 seconds.
+i:  2  Number1:  57  Number2:  62   Result: 3534 in: 1.7e-05 seconds.
+i:  3  Number1:  572  Number2:  620   Result: 354640 in: 2e-05 seconds.
+i:  4  Number1:  5728  Number2:  6207   Result: 35553696 in: 2.2e-05 seconds.
+i:  5  Number1:  57280  Number2:  62071   Result: -739540416 in: 1.5e-05 seconds.
+i:  6  Number1:  572807  Number2:  620716   Result: -931815756 in: 2e-05 seconds.
+i:  7  Number1:  5728077  Number2:  6207168   Result: 1396979648 in: 2.3e-05 seconds.
+i:  8  Number1:  57280775  Number2:  62071684   Result: -1496474468 in: 2e-05 seconds.
+i:  9  Number1:  572807755  Number2:  620716843   Result: 1203448729 in: 1.4e-05 seconds.
