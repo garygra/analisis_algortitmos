@@ -8,8 +8,13 @@ include_directories(
 	include
 )
 
+add_library(${PROJECT_NAME}_lib
+	src/timer.cpp
+	)
+
 add_executable(karatsuba src/karatsuba.cpp)
 
 target_link_libraries(
 	karatsuba
+	${PROJECT_NAME}_lib
 )

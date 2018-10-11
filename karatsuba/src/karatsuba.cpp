@@ -5,6 +5,7 @@
 #include <math.h>
 #include <string>
 #include <sstream>
+#include "timer.hpp"
 
 using namespace std;
 
@@ -29,6 +30,7 @@ string k_add(string first, string second)
 	int carry = 0;
 	string res("");
 	string aux("");
+	string dummy("XXXX");
 	int i ;
 	for (i = n-1; i > 3; i -= 4) // Change to a while: each string should have its own counter :s
 	{	
@@ -36,6 +38,7 @@ string k_add(string first, string second)
 		// cout << "A: " << first << endl;
 		// cout << "B: " << second << endl;
 		aux = to_string(stoi(first.substr(i-3, 4)) + stoi(second.substr(i-3, 4)) + carry);
+		prepend_zeros(&aux, &dummy);
 		// cout << "first:  " << first.substr(i-3, 4) << "\tsecond: " << second.substr(i-3, 4) << "\taux: " << aux << endl;
 		if (aux.length() > 4)
 		{
@@ -113,6 +116,8 @@ string k_mul(string first, string second)
 {
 	prepend_zeros(&first, &second);
 	int n = first.length();
+	int n_exp = (n % 2 == 1) ? n + 1 : n ; 
+
 	cout << "=================================================================" << endl;
 	cout << "n: " << n << "\tfirst: " << first << "\tsecond: " << second << endl;
 	if (n <= 1)
@@ -161,9 +166,9 @@ string k_mul(string first, string second)
 
 	cout << "n: " << n << "\ta: " << a << "\td: " << d << "\te: " << e << endl;
 
-	a.insert(a.length(), n, '0');
-	int n_e = (n % 2 == 0) ? n >> 1 : n >> 1 + 1; 
-	e.insert(e.length(), n_e , '0');
+	a.insert(a.length(), n_exp, '0');
+	// int n_e = (n % 2 == 0) ? n >> 1 : n >> 1 + 1; 
+	e.insert(e.length(), n_exp>>1 , '0');
 
 	cout << "xy: " << a << " + " << e << " + " << d << endl;
 	return k_add(a, k_add(e, d));
@@ -179,6 +184,11 @@ int main (int argc, char *argv[])
 		cout << argv[0] << " needs two (big) numbers as arguments, but it only recevied " << argc - 1 << "." << endl;
 		return 1;
 	}
+	sys_timer_t timer;
+	
+	// timer.reset();
+	// double duration = timer.measure();
+
 	string first (argv[1]);
 	string second (argv[2]);
 	prepend_zeros(&first, &second);
