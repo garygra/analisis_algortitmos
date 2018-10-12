@@ -25,8 +25,7 @@ fk2(x) = 0.000005 * x**(2)
 # set samples 1000
 plot fk(x) with lines title " {/Symbol Q}(n) = c n^{log_2 3}",\
 	 fk2(x) with lines title " {/Symbol Q}(n) = c n^{2}",\
-	 "mul_results.txt" using 2:10 with points title "Karatsuba",\
-	 "normal_mul_results.txt" using 2:10 with points pt 2 title "Multiplicación Normal"
+	 "mul_results.txt" using 2:10 with points title "Karatsuba"
 	 # f5(x) with lines title "2^2^n",\
 	 # f6(x) with lines title "log_2 log_2 n",\
 	 # f7(x) with lines title "n^{log_2 log_2 n}",\
