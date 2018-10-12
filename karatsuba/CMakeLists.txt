@@ -13,8 +13,14 @@ add_library(${PROJECT_NAME}_lib
 	)
 
 add_executable(karatsuba src/karatsuba.cpp)
+add_executable(normal_mul src/normal_mul.cpp)
 
 target_link_libraries(
 	karatsuba
+	${PROJECT_NAME}_lib
+)
+
+target_link_libraries(
+	normal_mul
 	${PROJECT_NAME}_lib
 )
