@@ -5,8 +5,9 @@
 #include <math.h>
 #include <vector>
 #include <sstream>
+#include <assert.h>  
 
-
+#include "priority_queue.hpp"
 
 using namespace std;
 /**
@@ -14,7 +15,7 @@ using namespace std;
  * @details 
  */
 
-class dijkstra
+class huffman
 {
 public:
   /**
@@ -23,29 +24,27 @@ public:
    *
    * @param 
    */
-  dijkstra(){
-    verbose = false;
-  };
+  huffman();
 
-  virtual ~dijkstra();
+  priority_queue queue;
+
+  virtual ~huffman();
 
   void get_solution();
   
-  void create_adj_mat();
+  void initialize(vector<char> vec_chars_in, vector<int> vec_frecs_in);
 
-  void print_adj_mat();
+  void print_sol();
 
-  void set_verbose(bool verbose_in){verbose = verbose_in;};
+  void next_branch(int val, node_h* n);
+
+  void print_vector();
+
+
 protected:
 
 private:
 
-  bool verbose;
-  int mat_size;
-  const int inf = 99 ;//1 << 30;
-  vector< vector<int> > adj;
-  vector<string> labels = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
-  vector<int> path;
 
 };
 
