@@ -36,7 +36,6 @@ public:
 
   void print_sol();
 
-  void next_branch(int val, node_h* n);
 
   void print_vector();
 
@@ -44,6 +43,7 @@ public:
 protected:
 
 private:
+  int next_branch(int val, node_h* n);
 
 
 };

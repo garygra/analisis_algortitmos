@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <random>
+#include <math.h> 
 
 // #include "node.hpp"
 // #include "priority_queue.hpp"
@@ -27,11 +28,22 @@ int main (int argc, char *argv[])
 	vector<char> v_chars{ 'a', 'b', 'c', 'd', 'e', 'f' }; 
 	vector<int>    v_freqs{ 45, 13, 12, 16, 9, 5 }; 
 	
+
 	huffman.initialize(v_chars, v_freqs);
 
 	huffman.get_solution();
 
 	huffman.print_sol();
+
+	int bits = ceil(log2(v_chars.size()));
+	int sum = 0;
+	for (auto e : v_freqs)
+	{
+		sum += e;
+	}
+
+	cout << "With fixed encoding, the file will have " << bits * sum << " bits." << endl;
+
 
   	return 0;
 }

@@ -50,20 +50,23 @@ void huffman::initialize(vector<char> vec_chars_in, vector<int> vec_frecs_in)
 void huffman::print_sol()
 {
 	cout << "Printing solution:" << endl;
-	next_branch(0, queue.top());
+	int res = next_branch(0, queue.top());
+
+	cout << "The file can be encoded in: " << res << " bits." << endl;
 }
 
-void huffman::next_branch(int val, node_h* n)
+int huffman::next_branch(int val, node_h* n)
 {
 	// n -> print_node_h(to_string(val));
 	if (n -> left == NULL && n -> right == NULL)
 	{
 		cout << "Letter: " << n -> letter << "\tcode: " << val << endl;
+		return to_string(val).length() * n -> freq;
 	}
 	else 
 	{
-		next_branch(val * 10 , n -> right); // derecha
-		next_branch(val * 10 + 1, n -> left); // izquierda
+		
+		return next_branch(val * 10 , n -> right) + next_branch(val * 10 + 1, n -> left); // izquierda
 	}
 }
 
